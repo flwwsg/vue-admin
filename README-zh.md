@@ -100,3 +100,10 @@ Modern browsers and Internet Explorer 10+.
 [MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 
 Copyright (c) 2017-present PanJiaChen
+
+### 添加页面
+- router/index.js 中添加路由
+- views 目录创建对应文件夹，一个路由对应一个文件。
+- api 文件夹下创建本模块对应的 api 服务
+- 全局 components 或者views目录下 components 中添加组件
+- 全局 style 新增公用样式 或者当前views下面新增局部样式
