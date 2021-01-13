@@ -26,7 +26,7 @@ const users = {
 module.exports = [
   // user login
   {
-    url: '/vue-admin-template/user/login',
+    url: '/public/login',
     type: 'post',
     response: config => {
       const { username } = config.body
@@ -41,7 +41,7 @@ module.exports = [
       }
 
       return {
-        code: 20000,
+        code: 200,
         data: token
       }
     }
@@ -49,10 +49,10 @@ module.exports = [
 
   // get user info
   {
-    url: '/vue-admin-template/user/info\.*',
+    url: '/token/user/info',
     type: 'get',
     response: config => {
-      const { token } = config.query
+      const token = config.headers.authorization.split(' ')[1]
       const info = users[token]
 
       // mock error
@@ -64,7 +64,7 @@ module.exports = [
       }
 
       return {
-        code: 20000,
+        code: 200,
         data: info
       }
     }
@@ -76,7 +76,7 @@ module.exports = [
     type: 'post',
     response: _ => {
       return {
-        code: 20000,
+        code: 200,
         data: 'success'
       }
     }

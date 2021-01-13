@@ -31,6 +31,15 @@
           <el-option label="第十课" value="10" />
         </el-select>
       </el-form-item>
+      <el-form-item label="课程类型">
+        <el-select v-model="form.type" placeholder="请选择课程类型">
+          <el-option label="听" value="1" />
+          <el-option label="玩" value="2" />
+          <el-option label="唱" value="3" />
+          <el-option label="跳" value="4" />
+          <el-option label="大师课" value="5" />
+        </el-select>
+      </el-form-item>
       <div style="margin-left: 20px">
         <el-form-item>
           <el-button type="primary" @click="onSubmit">立即上传</el-button>
@@ -65,6 +74,7 @@ export default {
       const formData = new FormData()
       formData.append('file', fileObj)
       formData.append('level', this.form.level)
+      formData.append('type', this.form.type)
       uploadVideo(formData).then(res => {
         this.$message.success('上传成功')
       }).catch(err => {

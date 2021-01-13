@@ -1,11 +1,11 @@
 
 module.exports = [
   {
-    url: '/token/upload-video',
+    url: '/token/upload/video',
     type: 'post',
     response: () => {
       return {
-        code: 20000
+        code: 200
       }
     }
   }
